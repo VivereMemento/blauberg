@@ -6,38 +6,67 @@ block variables
 block content
 	section.products
 		.container
-			aside.products__aside
-				.products__aside-heading
-					| Подбор запчастей
-				.products__aside-item
-					.products__aside-choice
-						| Виберите категорию
-					.products__aside-choice
-						| Выберите субкатегорию
-					.products__aside-choice
-						| Выберите серию
-					.products__aside-choice
-						| Выберите товар
-					a.products__aside-choice-btn Подобрать
+			.products__inner
+				aside.products__aside
+					.products__aside-heading
+						| Подбор запчастей
+					.products__aside-item
+						.products__choice
+							.products__choice-item
+								.products__choice-count(data-count="1")
+								.products__choice-text
+									| Виберите категорию
+							.products__choice-item
+								.products__choice-count(data-count="2")
+								.products__choice-text
+									| Выберите субкатегорию
+							.products__choice-item
+								.products__choice-count(data-count="3")
+								.products__choice-text
+									| Выберите серию
+							.products__choice-item
+								.products__choice-count(data-count="4")
+								.products__choice-text
+									| Выберите товар
+						a.products__choice-btn Подобрать
 
-				.products__aside-item
-					.products__aside-text
-						| BLAUBERG - производитель полного спектра вентиляционного оборудования, в котором оптимально сочетаются иннованционные технологии, современный дизайн и традиционное исконно немецокое качество
-					.products__aside-text
-						| Мы предлагаем широкий ассортимент бытовых вентиляторов, децентрализованных вентиляционных установок с рекуперацией тепла, промышленных вентиляторов, принадлежностей и аксессуаров для создания вентиляциооных систем.
+					.products__aside-item
+						.products__aside-text
+							| BLAUBERG - производитель полного спектра вентиляционного оборудования, в котором оптимально сочетаются иннованционные технологии, современный дизайн и традиционное исконно немецокое качество
+						.products__aside-text
+							| Мы предлагаем широкий ассортимент бытовых вентиляторов, децентрализованных вентиляционных установок с рекуперацией тепла, промышленных вентиляторов, принадлежностей и аксессуаров для создания вентиляциооных систем.
 
-				.products__aside-item
-					.products__aside-contacts
-						span.products__aside-contacts-heading Контакты
-						span По вопросам поставки продукции по территории Украины:
-						.products__aside-phones
-							span.products__aside-number
-								| (044) 406-36-27
-								span многоканальный
-							span.products__aside-number
-								| (044) 406-36-27
-						.products__aside-address
-							span Украина, 01030, г. Киев, ул. М. Коцюбинского, 1
+					.products__aside-item
+						.products__contacts
+							span.products__contacts-heading Контакты
+							span По вопросам поставки продукции по территории Украины:
+							.products__contacts-phones
+								span.products__contacts-number
+									| (044) 406-36-27
+									span многоканальный
+								span.products__contacts-number
+									| (044) 406-36-27
+							.products__contacts-address
+								span Украина, 01030, г. Киев, ул. М. Коцюбинского, 1
 
 
-			.products__right
+				.products__right
+					-
+						var list = [
+							{href: '#', src: 'product_1.png'},
+							{href: '#', src: 'product_1.png'},
+							{href: '#', src: 'product_1.png'},
+							{href: '#', src: 'product_1.png'},
+							{href: '#', src: 'product_1.png'},
+							{href: '#', src: 'product_1.png'},
+							{href: '#', src: 'product_1.png'}
+						];
+
+					ul.products__list
+						each item in list
+							li.products__item
+								a.products__link(href="" + item.href)
+									figure.products__img-wrap
+										img.products__img(src="./assets/img/" + item.src)
+										figcaption.products__img-desc
+											| Бытовые вентялоторы
