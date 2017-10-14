@@ -1,0 +1,180 @@
+.products {
+	padding-top: 70px;
+	background: url(../img/main-bg.jpg) no-repeat;
+	background-size: cover;
+
+	&__aside {
+		display: inline-block;
+		width: 24%;
+		color: #fff;
+		background: $blue;
+
+		&-heading {
+			display: flex;
+			justify-content: center;
+			align-items: center;
+			width: 100%;
+			padding: 15px 0;
+			font-size: 13px;
+			text-transform: uppercase;
+			background: $blue-dark;
+
+			&:before {
+				display: inline-block;
+				content: '';
+				margin-right: 10px;
+				@include sprite($search-product);
+				background-repeat: no-repeat;
+			}
+		}
+
+		&-item {
+			padding: 24px;
+			padding-bottom: 35px;
+			padding-left: 15px;
+			border-bottom: 1px dashed #fff;
+
+			@include clearfix;
+
+			&:last-child {
+				border-bottom: none;
+			}
+		}
+
+		&-choice {
+			margin-bottom: 15px;
+			padding: 15px;
+			padding-right: 30px;
+			font-size: 14px;
+			background: #3790c9;
+			cursor: pointer;
+			position: relative;
+
+			&:hover {
+				&:after {
+					top: 22px;
+					box-shadow: -1px -1px 0 #fff;
+				}
+			}
+
+			&:after {
+				display: inline-block;
+				content: '';
+				width: 8px;
+				height: 8px;
+				box-shadow: 1px 1px 0 #fff;
+				transform: rotate(45deg);
+				position: absolute;
+				top: 15px;
+				right: 15px;
+				transition: .3s;
+			}
+
+			&:last-child {
+				margin-bottom: 0;
+			}
+
+			&-btn {
+				padding: 8px 20px;
+				font-size: 13px;
+				background: $blue-dark;
+				border: 1px solid transparent;
+				float: right;
+				cursor: pointer;
+
+				&:hover {
+					background: $blue;
+					border-color: $blue-dark;
+				}
+
+				&:after {
+					display: inline-block;
+					content: '';
+					width: 8px;
+					height: 8px;
+					box-shadow: 1px 1px 0 #fff;
+					transform: rotate(-45deg);
+				}
+			}
+		}
+
+		&-text {
+			margin-bottom: 20px;
+			font-size: 12px;
+			color: rgba(255, 255, 255, 0.75);
+			text-align: right;
+
+			&:last-child {
+				margin-bottom: 0;
+			}
+		}
+
+		&-contacts {
+			font-size: 12px;
+			text-align: right;
+			color: rgba(255, 255, 255, 0.75);
+
+			&-heading {
+				font-size: 16px;
+				margin-bottom: 30px;
+				color: #fff;
+				text-transform: uppercase;
+			}
+
+
+			& span {
+				display: block;
+			}
+		}
+
+		&-phones {
+			margin-top: 20px;
+			padding-right: 30px;
+			position: relative;
+
+			&:after {
+				display: inline-block;
+				content: '';
+				@include sprite($phone-contact);
+				background-repeat: no-repeat;
+				position: absolute;
+				top: 0;
+				right: 0;
+			}
+		}
+
+		&-number {
+			font-size: 12px;
+			font-weight: 700;
+			color: #fff;
+
+			span {
+				font-family: $SL;
+				font-size: 10px;
+				color: rgba(255, 255, 255, 0.75);
+				letter-spacing: 0.5px;
+			}
+		}
+
+		&-address {
+			margin-top: 20px;
+			padding-right: 30px;
+			position: relative;
+
+			&:after {
+				display: inline-block;
+				content: '';
+				@include sprite($location);
+				background-repeat: no-repeat;
+				position: absolute;
+				top: 0;
+				right: 0;
+			}
+		}
+	}
+
+	&__right {
+		display: inline-block;
+		width: 75%;
+	}
+}

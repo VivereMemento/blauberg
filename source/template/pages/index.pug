@@ -1,0 +1,43 @@
+extends ../_template
+
+block variables
+	- var title = 'Home'
+
+block content
+	section.products
+		.container
+			aside.products__aside
+				.products__aside-heading
+					| Подбор запчастей
+				.products__aside-item
+					.products__aside-choice
+						| Виберите категорию
+					.products__aside-choice
+						| Выберите субкатегорию
+					.products__aside-choice
+						| Выберите серию
+					.products__aside-choice
+						| Выберите товар
+					a.products__aside-choice-btn Подобрать
+
+				.products__aside-item
+					.products__aside-text
+						| BLAUBERG - производитель полного спектра вентиляционного оборудования, в котором оптимально сочетаются иннованционные технологии, современный дизайн и традиционное исконно немецокое качество
+					.products__aside-text
+						| Мы предлагаем широкий ассортимент бытовых вентиляторов, децентрализованных вентиляционных установок с рекуперацией тепла, промышленных вентиляторов, принадлежностей и аксессуаров для создания вентиляциооных систем.
+
+				.products__aside-item
+					.products__aside-contacts
+						span.products__aside-contacts-heading Контакты
+						span По вопросам поставки продукции по территории Украины:
+						.products__aside-phones
+							span.products__aside-number
+								| (044) 406-36-27
+								span многоканальный
+							span.products__aside-number
+								| (044) 406-36-27
+						.products__aside-address
+							span Украина, 01030, г. Киев, ул. М. Коцюбинского, 1
+
+
+			.products__right

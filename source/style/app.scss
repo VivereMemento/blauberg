@@ -1,0 +1,38 @@
+$responsive: true;
+
+/* --------- variables --------- */
+$SL: 'SegoeUILight', sans-serif;
+$SSB: 'SegoeUISemiBold', sans-serif;
+
+
+$blue: #0072bb;
+$blue-dark: #0c4da2;
+
+/* --------- common classes --------- */
+
+
+
+/* --------- adjustment --------- */
+
+@import "_misc/mixins";
+@import "_misc/fonts";
+@import "_misc/adjustment";
+@import "_misc/_sprite";
+
+/* --------- common --------- */
+
+@import "_common/_header";
+@import "_common/_footer";
+@import "_common/_navigation";
+@import "_common/_menu";
+@import "_common/_social";
+@import "_common/_logo";
+@import "_common/_slider";
+@import "_common/_checkbox";
+
+/* --------- sections --------- */
+
+// @import "_sections/**/*";
+@import "_sections/_main";
+
+

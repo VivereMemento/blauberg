@@ -1,0 +1,31 @@
+header.header
+	.container
+		.header__top
+			+logo(blauberg, "logo.png", "")
+			a.btn-recall(href="#") Обратный звонок
+
+			.user
+				.user__item
+					span(class="user__btn user__btn_search") Поиск
+
+				.user__item
+					span(class="user__btn user__btn_language") Язык:
+						span Русский
+
+
+				.user__item
+					span(class="user__btn user__btn_user") Регистрация и вход
+
+		.header__bottom
+
+			-
+				var nav = ['Главная', 'Каталог запчастей','Сервесное обслуживание', 'Контакты'];
+
+			nav.nav
+				ul.nav__list
+					each item in nav
+						li.nav__item
+							a(class="nav__link" + (item === "Главная" ? " nav__link_icon" : "")  href="#") #{item}
+
+				.basket
+					a.basket__link(href="#") Корзина
