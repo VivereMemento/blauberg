@@ -1,0 +1,12 @@
+$(document).ready(function(){
+	$("#js-footer-slider").owlCarousel({
+		loop:true,
+		margin:40,
+		nav:true,
+		autoWidth:true,
+		items:6,
+		autoplay:true,
+		autoplayTimeout:2000,
+		autoplayHoverPause:true
+	});
+});

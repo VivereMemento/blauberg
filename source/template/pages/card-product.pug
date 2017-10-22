@@ -1,0 +1,124 @@
+extends ../_template
+
+block variables
+	- var title = 'Card of product'
+
+block content
+	main.card-propduct
+		.container
+			include ../_common/_breadcrumbs
+			.product-title
+				| Внешний датчик температуры ЗДТ2
+			section.card-propduct__content
+				.slideshow
+					div(id="js-slideshow-display" class="slideshow__display")
+						span(id="js-show-btn" class="slideshow__zoom")
+						a.slideshow__display-link(href='#')
+							img.slideshow__display-img(src='./assets/img/slide-big_1.jpg')
+
+					-
+						var slides = [
+							{src: 'slide-big_1.jpg'},
+							{src: 'slide-small_2.jpg'},
+							{src: 'slide-small_3.jpg'},
+							{src: 'slide-small_1.jpg'},
+							{src: 'slide-small_3.jpg'}
+						]
+					.slideshow__list-wrap
+						.slideshow__list-display
+							ul(id="js-slideshow-list" class="slideshow__list")
+								each slide in slides
+									li.slideshow__item
+										a.slideshow__link(href='#')
+											img.slideshow__img(src='./assets/img/' + slide.src alt="" + slide.src)
+						div(id="js-control-btns" class="slideshow__controls")
+							a(id="js-next--btn" class="slideshow__next-btn" href="#")
+							a(id="js-prev--btn" class="slideshow__prev-btn" href="#")
+
+
+				.card-propduct__desc
+					.card-propduct__desc-text
+						| Инновационные осевые вентиляторы с низким уровнем шума и энергопотреблением для вытяжной вентиляции с производительностью до 370 м3/ч. Для монтажа в вентиляциооных шахтах или соединения с воздуховодами &empty; 100, 125, 150 мм.
+					.card-propduct__price
+						span.card-propduct__price-text Цена:
+						span.card-propduct__price-numbers 345.00 
+							span.card-propduct__price-currency uah
+					div(class="card-propduct__add card-propduct__add_mods")
+						div(id="js-add-count" class="add-input")
+							input(type="text" value="1")
+							span.add-input__btn.add-input__btn_top(id="js-input__btn-up")
+							span.add-input__btn.add-input__btn_bottom(id="js-input__btn-down")
+						a.btn(href="#") 
+							| Добавить в корзину
+						.warring
+							| Заканчивается
+
+					-
+						var infos = [
+							{type: 'Тип:', text: 'Внешний датчик температуры ЗДТ2'},
+							{type: 'Вид:', text: 'Контроллер температуры'},
+							{type: 'Масса, грамм:', text: '90'},
+							{type: 'Габариты, мм:', text: '100х40х70'},
+							{type: 'Артикул:', text: 'Д1234567899'}
+						];
+
+					ul.card-propduct__info
+						each info in infos
+							li.card-propduct__info-row
+								.card-propduct__info-type
+									| #{info.type}
+								.card-propduct__info-text
+									| #{info.text}
+			section.card-propduct__tabs
+				.tabs
+					-
+						var controls = ['Применяемость', 'Описание'];
+
+					ul.tabs__controls
+						each control in controls
+							li(class="tabs__controls-item" + (control == 'Применяемость' ? ' active' : ''))
+								a.tabs__controls-link(href="#") #{control}
+					ul.tabs__list
+						li.tabs__list-item
+							-
+								var applicabilities = [
+									{seria: 'Blaubox E', type: 'Blaubox E200-1.8'},
+									{seria: 'Blaubox E', type: 'Blaubox E200-1.8'},
+									{seria: 'Blaubox E', type: 'Blaubox E200-1.8'},
+									{seria: 'Blaubox E', type: 'Blaubox E200-1.8'},
+									{seria: 'Blaubox E', type: 'Blaubox E200-1.8'},
+									{seria: 'Blaubox E', type: 'Blaubox E200-1.8'},
+									{seria: 'Blaubox E', type: 'Blaubox E200-1.8'}
+								];
+							.applicability
+								ul.applicability__list
+									each applicability in applicabilities
+										li.applicability__item
+											a.applicability__link(href="#")
+												span.applicability__seria #{applicability.seria}
+													span.applicability__type  / #{applicability.type}
+
+						li.tabs__list-item
+							-
+								var applicabilities = [
+									{seria: 'Blaubox E', type: 'Blaubox E200-1.8'},
+									{seria: 'Blaubox E', type: 'Blaubox E200-1.8'},
+									{seria: 'Blaubox E', type: 'Blaubox E200-1.8'},
+									{seria: 'Blaubox E', type: 'Blaubox E200-1.8'},
+									{seria: 'Blaubox E', type: 'Blaubox E200-1.8'}
+								];
+							.applicability
+								ul.applicability__list
+									each applicability in applicabilities
+										li.applicability__item
+											a.applicability__link(href="#")
+												span.applicability__seria #{applicability.seria}
+													span.applicability__type  / #{applicability.type}
+
+
+
+
+
+
+
+

@@ -49,6 +49,16 @@ mixin slideshow(array, id)
 //-                     PRIVATE MIXINS
 //- ************************************************************ // 
 
+//- ----------- navigation second floor -------------- //
+
+
+mixin nav-floors(array, className)
+    ul(class="nav__list-" + className)
+        each item in array
+            li(class="nav__item-" + className)
+                a(class="nav__link-" + className href="" + item.href ) #{item.text}
+                +nav-floors(nav, 'thirdfloor')
+
 
 //- ----------- navigation svg -------------- //
 

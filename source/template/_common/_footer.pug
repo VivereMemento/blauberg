@@ -2,6 +2,24 @@ footer.footer
 	.container
 		.footer__top
 			+logo("Blauberg", "footer-logo.jpg", false)
+			.slider
+				-
+					var slides = [
+						{src: 'company_1.png'},
+						{src: 'company_2.png'},
+						{src: 'company_3.png'},
+						{src: 'company_4.png'},
+						{src: 'company_5.png'},
+						{src: 'company_6.png'},
+						{src: 'company_7.png'}
+					];
+
+				ul(id="js-footer-slider" class="slider__list owl-carousel")
+					each slide in slides
+						li.slider__item
+							a.slider__link(href="#")
+								img.slider__img(src="./assets/img/" + slide.src)
+
 		.footer__bottom
 			.footer__copyright
 				| BLAUBERG &copy; Все права защищены

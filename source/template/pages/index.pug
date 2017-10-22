@@ -4,7 +4,7 @@ block variables
 	- var title = 'Home'
 
 block content
-	section.products
+	main.products
 		.container
 			.products__inner
 				aside.products__aside
@@ -53,13 +53,13 @@ block content
 				.products__right
 					-
 						var list = [
-							{href: '#', src: 'product_1.png'},
-							{href: '#', src: 'product_1.png'},
-							{href: '#', src: 'product_1.png'},
-							{href: '#', src: 'product_1.png'},
-							{href: '#', src: 'product_1.png'},
-							{href: '#', src: 'product_1.png'},
-							{href: '#', src: 'product_1.png'}
+							{mods: 'icon-1', href: '#', src: 'product_1.png', text: 'Бытовые вентялоторы'},
+							{mods: 'icon-2', href: '#', src: 'product_2.png', text: 'Промышленные и коммерческие'},
+							{mods: 'icon-3', href: '#', src: 'product_3.png', text: 'Комнатные установки с рекуперацией тепла'},
+							{mods: 'icon-4', href: '#', src: 'product_4.png', text: 'Приточно-вытяжные вентиляционные установки'},
+							{mods: 'icon-1', href: '#', src: 'product_5.png', text: 'Приточные установки'},
+							{mods: 'icon-3', href: '#', src: 'product_6.png', text: 'Воздухообрабатывающие агрегаты Blauberg'},
+							{mods: 'icon-4', href: '#', src: 'product_7.png', text: 'Вентиляционные принадлежности'}
 						];
 
 					ul.products__list
@@ -68,5 +68,5 @@ block content
 								a.products__link(href="" + item.href)
 									figure.products__img-wrap
 										img.products__img(src="./assets/img/" + item.src)
-										figcaption.products__img-desc
-											| Бытовые вентялоторы
+										figcaption(class="products__img-desc products__img-desc_" + item.mods)
+											span #{item.text}

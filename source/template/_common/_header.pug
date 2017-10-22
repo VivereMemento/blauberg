@@ -4,28 +4,55 @@ header.header
 			+logo(blauberg, "logo.png", "")
 			a.btn-recall(href="#") Обратный звонок
 
-			.user
+			#user-block.user
 				.user__item
 					span(class="user__btn user__btn_search") Поиск
 
 				.user__item
 					span(class="user__btn user__btn_language") Язык:
 						span Русский
+					.language
+						-
+							var langs = ['ru', 'ua', 'en']
+						ul.language__list
+							each lang in langs
+								li.language__item
+									a.language__link(href="#") 
+										span(class="user__btn user__btn_language") Язык:
+											span #{lang}
 
 
 				.user__item
-					span(class="user__btn user__btn_user") Регистрация и вход
+					span(class="user__btn user__btn_reg") Регистрация и вход
 
 		.header__bottom
 
 			-
 				var nav = ['Главная', 'Каталог запчастей','Сервесное обслуживание', 'Контакты'];
 
+			-
+				var navsecond = [
+					{text: 'Бытовые вентиляторы', href: '#'},
+					{text: 'Промышленные и коммерческие вентиляторы', href: '#'},
+					{text: 'Приточно-вытяжные вентиляционные установки', href: '#'},
+					{text: 'Вентиляционные принадлежности', href: '#'},
+					{text: 'Воздуховоды и соединительно-монтажные элементы', href: '#'},
+					{text: 'Воздухораспределители и решетки', href: '#'},
+					{text: 'Электрические принадлежности', href: '#'},
+					{text: 'Вентиляционные наборы и проветриватели', href: '#'}
+				];
+
 			nav.nav
 				ul.nav__list
 					each item in nav
 						li.nav__item
 							a(class="nav__link" + (item === "Главная" ? " nav__link_icon" : "")  href="#") #{item}
+							if item === 'Главная'
+								ul(class="nav__list-secondfloor")
+									each item in navsecond
+										li(class="nav__item-secondfloor")
+											a(class="nav__link-secondfloor" href="" + item.href ) #{item.text}
+
 
 				.basket
 					a.basket__link(href="#") Корзина

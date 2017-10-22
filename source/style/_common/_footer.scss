@@ -2,10 +2,10 @@
 	padding: 30px 0;
 	background: url(../img/footer-bg.jpg);
 
-	&__copyright {
-		font-family: $SL;
-		font-size: 12px;
+	&__top {
+		@include clearfix;
 	}
+
 	
 	&__bottom {
 		display: flex;
@@ -14,4 +14,68 @@
 		margin-top: 25px;
 	}
 
+	&__copyright {
+		margin-right: 15px;
+		font-family: $SL;
+		font-size: 12px;
+	}
+
+}
+
+.slider {
+	width: 61%;
+	margin-top: 15px;
+	margin-right: 33px;
+	float: right;
+
+	&__item {
+		height: 40px;
+	}
+
+	&__link {
+		display: block;
+		height: 100%;
+		position: relative;
+	}
+
+
+	& .owl-next,
+	& .owl-prev {
+		width: 40px;
+		height: 40px;
+		font-size: 0;
+		position: absolute;
+		top: 0;
+
+		&:after {
+			display: block;
+			content: '';
+			width: 20px;
+			height: 20px;
+			box-shadow: 5px 5px #2e5991;
+			transform: rotate(45deg);
+			position: absolute;
+			top: 0;
+			right: 0;
+			bottom: 0;
+			left: 0;
+			margin: auto;
+		}
+	}
+
+	& .owl-next {
+		right: -30px;
+
+		&:after {
+			transform: rotate(-45deg);
+		}
+	}
+
+	& .owl-prev {
+		left: -40px;
+		
+		&:after {
+			box-shadow: -5px 5px #2e5991;
+		}
+	}
 }

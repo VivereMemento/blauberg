@@ -1,7 +1,4 @@
 .products {
-	padding-top: 70px;
-	background: url(../img/main-bg.jpg) no-repeat;
-	background-size: cover;
 
 	&__inner {
 		background: #fff;
@@ -246,7 +243,8 @@
 	}
 
 	&__item {
-		width: 31%;
+		width: 32%;
+		height: 268px;
 		margin-bottom: 15px;
 		padding-top: 15px;
 		background: #d8f1ff;
@@ -272,8 +270,16 @@
 	}
 
 	&__link {
+		display: block;
+		height: 100%;
 		color: #fff;
 		text-decoration: none;
+		position: relative;
+	}
+
+	&__img-wrap {
+		display: block;
+		height: 100%;
 		position: relative;
 	}
 
@@ -286,19 +292,41 @@
 	&__img-desc {
 		display: flex;
 		align-items: center;
+		width: 100%;
 		height: 70px;
-		padding: 5px 10px;
+		padding: 5px;
 		background: $blue;
 		border-top: 1px solid #c9dae5;
 		transition: .3s;
+		position: absolute;
+		bottom: 0;
 
 		&:before {
-				display: inline-block;
-				content: '';
-				width: 8px;
-				height: 8px;
-				box-shadow: 1px 1px 0 #fff;
-				transform: rotate(-45deg);
-			}
+			display: inline-block;
+			content: '';
+			margin-right: 5px;
+			background-repeat: no-repeat;
+			background-position: center;
+		}
+
+		&_icon-1:before {
+			@include sprite($product-icon_1);
+		}
+
+		&_icon-2:before {
+			@include sprite($product-icon_2);
+		}
+
+		&_icon-3:before {
+			@include sprite($product-icon_3);
+		}
+
+		&_icon-4:before {
+			@include sprite($product-icon_4);
+		}
+
+		& span {
+			width: 85%;
+		}
 	}
 }
